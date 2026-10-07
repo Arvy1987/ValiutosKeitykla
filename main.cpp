@@ -1,8 +1,10 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
     int pasirinkimas;
+    cout << fixed << setprecision(2);
 
     cout << "VALIUTOS KEITYKLA\n";
     cout << "1. Palyginti valiutu kursus\n";
@@ -16,9 +18,18 @@ int main() {
     if (pasirinkimas == 1) {
         cout << "Pasirinkote kursu palyginima.\n";
     } else if (pasirinkimas == 2) {
-        cout << "Pasirinkote valiutos pirkima.\n";
+        double eurai;
+        cout<< "Iveskite suma eurais: ";
+        cin>>eurai;
+        double svarai = eurai * 0.8600;
+        cout<< "Gausite " <<svarai<<" GBP\n";
+
     } else if (pasirinkimas == 3) {
-        cout << "Pasirinkote valiutos pardavima.\n";
+        double svarai;
+        cout << "Iveskite suma svarais: ";
+        cin >> svarai;
+        double eurai = svarai / 0.9220;
+        cout << "Gausite "<< eurai<< " EUR\n";
     } else if (pasirinkimas == 0) {
         cout << "Programa baigia darba.\n";
     } else {
