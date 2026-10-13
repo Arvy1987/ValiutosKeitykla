@@ -21,15 +21,23 @@ int main() {
         double eurai;
         cout<< "Iveskite suma eurais: ";
         cin>>eurai;
-        double svarai = eurai * 0.8600;
-        cout<< "Gausite " <<svarai<<" GBP\n";
+        if (eurai <= 0) {
+            cout << "Suma turi buti teigiama.\n";
+        } else {
+            double svarai = eurai * 0.8600;
+            cout<< "Gausite " <<svarai<<" GBP\n";
+        }
 
     } else if (pasirinkimas == 3) {
         double svarai;
         cout << "Iveskite suma svarais: ";
         cin >> svarai;
-        double eurai = svarai / 0.9220;
-        cout << "Gausite "<< eurai<< " EUR\n";
+        if (svarai <= 0) {
+            cout << "Suma turi buti teigiama.\n";
+        } else {
+            double eurai = svarai / 0.9220;
+            cout << "Gausite "<< eurai<< " EUR\n";
+        }
     } else if (pasirinkimas == 0) {
         cout << "Programa baigia darba.\n";
     } else {
