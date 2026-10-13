@@ -3,6 +3,9 @@
 using namespace std;
 
 int main() {
+    const double GBP_Pirkti = 0.8600;
+    const double USD_Pirkti = 1.1460;
+    const double INR_pirkti = 101.3862;
     int pasirinkimas;
     cout << fixed << setprecision(2);
 
@@ -18,17 +21,37 @@ int main() {
     if (pasirinkimas == 1) {
         cout << "Pasirinkote kursu palyginima.\n";
     } else if (pasirinkimas == 2) {
-        double eurai;
-        cout<< "Iveskite suma eurais: ";
-        cin>>eurai;
-        if (eurai <= 0) {
-            cout << "Suma turi buti teigiama.\n";
-        } else {
-            double svarai = eurai * 0.8600;
-            cout<< "Gausite " <<svarai<<" GBP\n";
-        }
+        int valiuta;
+        cout << "Kokia valiuta norite pirkti? 1 - GBP, 2 - USD, 3 - INR \n";
+        cin >> valiuta;
+        if (valiuta < 1 || valiuta > 3) {
+            cout << "Neteisingas valiutos pasirinkimas!\n";
+        }   else {
+            double eurai;
+            cout<< "Kiek euru norite skirti valiutai pirkti? ";
+            cin>>eurai;
+            if (eurai <= 0) {
+                cout << "Suma turi buti teigiama.\n";
+            } else {
+                if (valiuta ==1){
+                    double svarai = eurai * GBP_Pirkti;
+                    cout<< "Gausite " <<svarai<<" GBP\n";
+                }
+                else if (valiuta == 2) {
+                    double doleriai = eurai * USD_Pirkti;
+                    cout<< "Gausite " <<doleriai<<" USD\n";
+                }
+                else if (valiuta == 3) {
+                    double rupijos = eurai * INR_pirkti;
+                    cout<< "Gausite " <<rupijos<<" INR\n";
+                }
 
-    } else if (pasirinkimas == 3) {
+
+            }
+
+
+        }
+    }else if (pasirinkimas == 3) {
         double svarai;
         cout << "Iveskite suma svarais: ";
         cin >> svarai;
