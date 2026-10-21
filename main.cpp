@@ -66,15 +66,15 @@ int main() {
                 }else{
                     if(valiuta ==1){
                     double svarai = eurai * GBP_Pirkti;
-                    cout<< "Gausite " <<svarai<<" GBP\n";
+                        cout << eurai << " EUR -> " << svarai << " GBP\n";
                     }
                     else if (valiuta == 2) {
                     double doleriai = eurai * USD_Pirkti;
-                    cout<< "Gausite " <<doleriai<<" USD\n";
+                        cout << eurai << " EUR -> " << doleriai << " USD\n";
                     }
                     else if (valiuta == 3) {
                     double rupijos = eurai * INR_pirkti;
-                    cout<< "Gausite " <<rupijos<<" INR\n";
+                        cout << eurai << " EUR -> " << rupijos << " INR\n";
                     }
                 }
             }
@@ -93,13 +93,13 @@ int main() {
                 } else {
                     if (valiuta ==1) {
                     double eurai = suma/ GBP_parduoti;
-                    cout << "Gausite "<< eurai<< " EUR\n";
+                        cout << suma << " GBP -> " << eurai << " EUR\n";
                     }else if (valiuta == 2) {
                     double eurai = suma/ USD_parduoti;
-                    cout<< "Gausite " <<eurai<< " EUR\n";
+                        cout << suma << " USD -> " << eurai << " EUR\n";
                     }else if (valiuta == 3) {
                     double eurai = suma/ INR_parduoti;
-                    cout<< "Gausite " <<eurai<<" EUR\n";
+                        cout << suma << " INR -> " << eurai << " EUR\n";
                 }
             }
         }
