@@ -3,6 +3,10 @@
 using namespace std;
 
 int main() {
+    const double GBP_Bendras = 0.8729;
+    const double USD_Bendras = 1.1793;
+    const double INR_Bendras = 104.6918;
+
     const double GBP_Pirkti = 0.8600;
     const double USD_Pirkti = 1.1460;
     const double INR_pirkti = 101.3862;
@@ -24,8 +28,30 @@ int main() {
     cin >> pasirinkimas;
 
     if (pasirinkimas == 1) {
-        cout << "Pasirinkote kursu palyginima.\n";
-    } else if (pasirinkimas == 2) {
+        int valiuta;
+        cout << "Pasirinkite valiuta, kurios kursa norite palyginti su euru:\n";
+        cout << "1 - GBP, 2 - USD, 3 - INR\n";
+        cin >> valiuta;
+        if (valiuta < 1 || valiuta > 3) {
+            cout << "Neteisingas valiutos pasirinkimas!\n";
+        }else {
+            if (valiuta == 1) {
+                cout << "Pagal bendra kursa:\n";
+                cout << "1 EUR atitinka " << GBP_Bendras << " GBP\n";
+                cout << "1 GBP atitinka " << 1.0 / GBP_Bendras << " EUR\n";
+            }
+            else if (valiuta == 2) {
+                cout<<"Pagal bendra kursa:\n";
+                cout<<"1 EUR atitinka " << USD_Bendras << " USD\n";
+                cout<<"1 USD atitinka " << 1.0/USD_Bendras<< " EUR\n";
+            }
+            else if (valiuta == 3) {
+                cout<<"Pagal bendra kursa:\n";
+                cout<<"1 EUR atitinka " << INR_Bendras << " INR\n";
+                cout<<"1 INR atitinka " << 1.0/INR_Bendras<< " EUR\n";
+            }
+        }
+    }else if (pasirinkimas == 2) {
         int valiuta;
         cout << "Kokia valiuta norite pirkti? 1 - GBP, 2 - USD, 3 - INR \n";
         cin >> valiuta;
